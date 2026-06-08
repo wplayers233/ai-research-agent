@@ -1,8 +1,15 @@
+<div align="center">
+
 # 🔍 Sage Research
 
-**SAGE** — Search, Analyze, Generate, Evaluate
+**S**earch · **A**nalyze · **G**enerate · **E**valuate
 
-An autonomous multi-agent research system that breaks down complex questions, searches across web and academic sources in parallel, and synthesizes structured research reports.
+An autonomous multi-agent research system that breaks down complex questions,<br>
+searches across web and academic sources in parallel, and synthesizes structured research reports.
+
+> 🚧 **Work in progress** — core modules implemented, agent orchestration under active development.
+
+</div>
 
 ## ✨ Features
 
@@ -19,34 +26,34 @@ An autonomous multi-agent research system that breaks down complex questions, se
 User Query
     │
     ▼
-┌─────────┐     ┌──────────────┐
-│  Router  │────▶│ Scope Clarify │
-└─────────┘     └──────┬───────┘
-                       │
-                       ▼
-              ┌─────────────────┐
-              │   Supervisor    │◀──── coverage check
-              └────────┬────────┘
-                       │
-            ┌──────────┼──────────┐
-            ▼          ▼          ▼
-      ┌──────────┐┌──────────┐┌──────────┐
-      │Researcher││Researcher││Researcher│
-      └────┬─────┘└────┬─────┘└────┬─────┘
-           │           │           │
-           └───────────┼───────────┘
-                       ▼
-              ┌─────────────────┐
-              │    Reviewer     │──── not enough? → back to Supervisor
-              └────────┬────────┘
-                       │
-                       ▼
-              ┌─────────────────┐
-              │     Writer      │
-              └────────┬────────┘
-                       │
-                       ▼
-                 Research Report
+┌─────────┐      ┌───────────────┐
+│  Router │────▶│ Scope Clarify │
+└─────────┘      └──────┬────────┘
+                        │
+                        ▼
+                ┌─────────────────┐
+                │   Supervisor    │◀──── coverage check
+                └────────┬────────┘
+                         │
+              ┌──────────┼──────────┐
+              ▼          ▼          ▼
+        ┌──────────┐┌──────────┐┌──────────┐
+        │Researcher││Researcher││Researcher│
+        └────┬─────┘└────┬─────┘└────┬─────┘
+             │           │           │
+             └───────────┼───────────┘
+                         ▼
+                ┌─────────────────┐
+                │    Reviewer     │──── not enough? → back to Supervisor
+                └────────┬────────┘
+                         │
+                         ▼
+                ┌─────────────────┐
+                │     Writer      │
+                └────────┬────────┘
+                         │
+                         ▼
+                   Research Report
 ```
 
 ## 🛠️ Tech Stack
@@ -80,8 +87,8 @@ git clone git@github.com:wplayers233/sage-research.git
 cd sage-research
 
 # Environment
-conda create -n deep-research python=3.14
-conda activate deep-research
+conda create -n sage-research python=3.14
+conda activate sage-research
 pip install -r requirements.txt
 
 # Configure
