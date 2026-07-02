@@ -120,27 +120,27 @@ python main.py --model deepseek-v4-flash --max-rounds 2
 ## 项目结构
 
 ```
-sage_research/
-├── base/       — LLMClient, AgentBase, Message, Config, Logger
-├── agents/     — Clarifier, Supervisor, Researcher, Writer
-├── tools/      — BaseTool, ToolRegistry, RAGTool, PaperReaderTool
-├── search/     — SearchTool (Brave+Tavily fallback), Adapters
-├── mcp/        — MCPClient, MCPTool, register_mcp_tools
-├── context/    — TokenCounter, Truncator, HistoryCompactor, ContextBuilder
-├── rag/        — Chunker, Embedding, VectorStore, Reranker, MQE, Pipeline
-├── graph/      — LangGraph state graph (State + nodes + routing)
-├── library/    — Document converter, LibraryManager (ingest/list/delete)
-├── api/        — FastAPI app, Pydantic schemas, SSE event formatting
-└── orchestrator.py — Infrastructure setup, research runner, resource management
+ sage_research/
+  ├── base/       — LLM客户端、Agent基类、消息、配置、日志
+  ├── agents/     — 问题澄清器、主管、研究员、报告撰写员
+  ├── tools/      — 工具基类、工具注册器、RAG工具、论文读取工具
+  ├── search/     — 搜索工具（Brave+Tavily 双引擎容灾）、适配器
+  ├── mcp/        — MCP客户端、MCP工具适配、工具注册
+  ├── context/    — Token计数器、截断器、历史压缩器、上下文构建器
+  ├── rag/        — 分块器、向量化、向量存储、重排序、MQE、流水线
+  ├── graph/      — LangGraph 状态图（State + 节点 + 路由）
+  ├── library/    — 文档转换器、文库管理器（导入/列表/删除）
+  ├── api/        — FastAPI 应用、Pydantic 模型、SSE 事件格式化
+  └── orchestrator.py — 基础设施组装、研究执行器、资源管理
 
-web/            — Next.js frontend
-├── app/        — Page layout, global styles
-├── components/ — ClarifyPanel, ResearchProgress, ReportView,
-│                 LibraryDrawer, StreamingText, QueryInput
-└── lib/        — API client, mock SSE simulation
+  web/            — Next.js 前端
+  ├── app/        — 页面布局、全局样式
+  ├── components/ — 问题澄清面板、研究进度、报告展示、
+  │                 文库抽屉、流式文本、搜索输入框
+  └── lib/        — API 客户端、Mock SSE 模拟
 
-configs/        — MCP server config, agent tool whitelists
-data/           — Runtime data (RAG index, downloads, library)
+  configs/        — MCP 服务配置、Agent 工具白名单
+  data/           — 运行时数据（RAG 索引、下载文件、文库）
 ```
 
 ## API 端点
